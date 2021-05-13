@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// import GoogleAuth from '../components/GoogleAuth'
+import { connect } from 'react-redux'
 
 class Navbar extends React.Component {
     render(){
@@ -96,4 +99,10 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar 
+const mapStateToProps = (state) => {
+    return({
+        state: state
+    })
+}
+
+export default connect(mapStateToProps, {})(Navbar) 
