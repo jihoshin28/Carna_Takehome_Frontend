@@ -7,7 +7,7 @@ import ChartsScreen from './screens/ChartsScreen'
 import CoursesScreen from './screens/CoursesScreen'
 import ForumsScreen from './screens/ForumsScreen'
 import ProfileScreen from './screens/ProfileScreen'
-import SettingsScreen from './screens/SettinsScreen'
+import SettingsScreen from './screens/SettingsScreen'
 import UsersScreen from './screens/UsersScreen'
 import NavBar from './containers/Navbar'
 
