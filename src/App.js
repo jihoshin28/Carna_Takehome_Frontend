@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -13,25 +14,26 @@ import UsersScreen from './screens/UsersScreen'
 import NavBar from './containers/Navbar'
 
 
-function App() {
-  return (
-    <div className="App">
-      <div>
-
-        <NavBar history = {this.props.history}/>  
-          <Route exact path={'/'} render={(props) => <AdminPanel {...props} />}></Route> 
-          <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
-          <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
-          <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
-          <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
-          <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
-          <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
-          <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
-          <Route exact path={'/users'} render={(props) => <UsersScreen {...props} />} />
+class App extends React.Component {
+  render(){
+    return (
+      <div className="App">
+        <div>
+  
+          <NavBar history = {this.props.history}/>  
+            <Route exact path={'/'} render={(props) => <AdminPanel {...props} />}></Route> 
+            <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
+            <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
+            <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
+            <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
+            <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
+            <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
+            <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
+            <Route exact path={'/users'} render={(props) => <UsersScreen {...props} />} />
+        </div>
       </div>
-        
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = (state) => {

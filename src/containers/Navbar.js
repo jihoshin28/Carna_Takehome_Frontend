@@ -12,38 +12,33 @@ class Navbar extends React.Component {
                 {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> */}
-                <div class="collapse navbar-collapse " id="navbarNav">
-                    <Link class='header-logo' to={'/'}>
-                        <img class="header-icon" src={'/bread_basket_icon.jpg'}></img>
-
+                <div class="sidebar" id="navbarNav">
+                    <Link class='sidebar-logo' to= '/' >
+                        <img src = {`${process.env.PUBLIC_URL}/admin_panel_logo.png`}/>
+                        Carna Admin Panel
                     </Link>
-                    <ul class="navbar-nav">
-                        <li class="nav-item nav-list active">
-                            <Link to = "/courses" class="menu-button">
-                                Order
-                            </Link>
-                        </li>
-                            
-                        <li class="nav-item nav-list active">
-                            <Link to = "/charts" class="menu-button">
-                                Order
-                            </Link>
-                        </li>
-    
-                        <li class="nav-item nav-list">
-                            <Link to = "/users" class="menu-button">Active Orders</Link>
-                        </li>
                     
-                    
-                        <li class="nav-item nav-list">
-                            <Link to = "/calendar" class="menu-button">Order History</Link>
-                        </li>
+                    <Link to = "/courses" class="sidebar-link">
+                        Courses
+                    </Link>
+                
+                    <Link to = "/charts" class="sidebar-link">
+                        Charts
+                    </Link>
+                
+                    <Link to = "/users" class="sidebar-link">
+                        Users
+                    </Link>
+                
+                    <Link to = "/calendar" class="sidebar-link">
+                        Calendar
+                    </Link>
 
-                        <li class="nav-item nav-list">
-                            <Link to = '/forums' class="menu-button">About</Link>
-                        </li>
-                    </ul>
-
+                    <Link to = '/forums' class="sidebar-link">
+                        Forums
+                    </Link>
+                        
+                </div>
                     {/* {(!!this.props.signedIn) ?
                     
                     <ul class="navbar-nav">
@@ -74,7 +69,6 @@ class Navbar extends React.Component {
                         </li>
                     </ul>
                     } */}
-                </div>
                 {/* {(!!this.props.signedIn) ? 
                 <ul class="navbar-nav nav-right-btn">
                     <li class="nav-item">

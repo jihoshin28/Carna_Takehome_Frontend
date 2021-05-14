@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebar {
+  position: fixed;
+  background-color: rgb(66, 66, 66);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  overflow-x: hidden;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 5%;
+  font-size: 2em;
+  text-decoration: none;
+  color: rgb(116, 116, 116);
+}
+
+.sidebar-logo {
+  display: block;
+  padding: 7%;
+  font-size: 1em;
+  text-decoration: none;
+  color: rgb(116, 116, 116);
+}
+
+.sidebar-logo img {
+  width: 17%;
+  height: 17%;
+  padding-right: 3%;
+}
