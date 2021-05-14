@@ -28,13 +28,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-display{
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 15%;
+  padding: 2%;
 }
 
 .sidebar {
@@ -44,6 +42,7 @@
   left: 0;
   height: 100%;
   width: 15%;
+  z-index: 1;
   overflow-x: hidden;
 }
 
@@ -67,4 +66,24 @@
   width: 17%;
   height: 17%;
   padding-right: 3%;
+}
+
+.toolbar {
+ position: fixed; 
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 7%;
+ overflow-y: hidden;
+ background-color:rgb(194, 194, 194)
+}
+
+.toolbar-link{
+  margin-right: 15px;
+  float: right; 
+}
+
+.toolbar-icon {
+  width: 20px;
+  height: 20px; 
 }

@@ -11,25 +11,27 @@ import ForumsScreen from './screens/ForumsScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import UsersScreen from './screens/UsersScreen'
-import NavBar from './containers/Navbar'
+import NavBar from './containers/Sidebar'
+import ToolBar from './containers/Toolbar'
 
 
 class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <div>
+        <div className = "page-display">
   
           <NavBar history = {this.props.history}/>  
-            <Route exact path={'/'} render={(props) => <AdminPanel {...props} />}></Route> 
-            <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
-            <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
-            <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
-            <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
-            <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
-            <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
-            <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
-            <Route exact path={'/users'} render={(props) => <UsersScreen {...props} />} />
+          <ToolBar history = {this.props.history}/>
+          <Route exact path={'/'} render={(props) => <AdminPanel {...props} />}></Route> 
+          <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
+          <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
+          <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
+          <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
+          <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
+          <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
+          <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
+          <Route exact path={'/users'} render={(props) => <UsersScreen {...props} />} />
         </div>
       </div>
     );
