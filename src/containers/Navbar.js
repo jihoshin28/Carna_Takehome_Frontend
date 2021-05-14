@@ -19,23 +19,28 @@ class Navbar extends React.Component {
                     </Link>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-list active">
-                            <Link to = "/orderpage" class="menu-button">
+                            <Link to = "/courses" class="menu-button">
                                 Order
                             </Link>
                         </li>
                             
-                        {(!isEmpty(this.props.activeOrders)) ? 
-                                <li class="nav-item nav-list">
-                                    <Link to = "/active_orders" class="menu-button">Active Orders</Link>
-                                </li>
-                                :
-                                null
-                        }
-                        <li class="nav-item nav-list">
-                            <Link to = "/order_history" class="menu-button">Order History</Link>
+                        <li class="nav-item nav-list active">
+                            <Link to = "/charts" class="menu-button">
+                                Order
+                            </Link>
                         </li>
+    
                         <li class="nav-item nav-list">
-                            <Link to = '/about' class="menu-button">About</Link>
+                            <Link to = "/users" class="menu-button">Active Orders</Link>
+                        </li>
+                    
+                    
+                        <li class="nav-item nav-list">
+                            <Link to = "/calendar" class="menu-button">Order History</Link>
+                        </li>
+
+                        <li class="nav-item nav-list">
+                            <Link to = '/forums' class="menu-button">About</Link>
                         </li>
                     </ul>
 

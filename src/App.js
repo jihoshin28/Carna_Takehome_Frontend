@@ -1,6 +1,7 @@
 import './App.css';
 import {Route} from 'react-router-dom'
 import { connect } from 'react-redux'
+import AdminPanel from './screens/AdminPanel'
 import AuthScreen from './screens/AuthScreen'
 import CalendarScreen from './screens/CalendarScreen'
 import ChartsScreen from './screens/ChartsScreen'
