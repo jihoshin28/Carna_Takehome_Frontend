@@ -12,22 +12,18 @@ class Navbar extends React.Component {
                     Carna Admin Panel
                 </Link>
                 
+                <Link to = "/calendar" class="sidebar-link">
+                    Calendar
+                </Link>
+                
+                <Link to = "/charts" class="sidebar-link">
+                    Charts
+                </Link>
+                
                 <Link to = "/courses" class="sidebar-link">
                     Courses
                 </Link>
             
-                <Link to = "/charts" class="sidebar-link">
-                    Charts
-                </Link>
-            
-                <Link to = "/users" class="sidebar-link">
-                    Users
-                </Link>
-            
-                <Link to = "/calendar" class="sidebar-link">
-                    Calendar
-                </Link>
-
                 <Link to = '/forums' class="sidebar-link">
                     Forums
                 </Link>
@@ -35,6 +31,11 @@ class Navbar extends React.Component {
                 <Link to = '/groups' class="sidebar-link">
                     Groups
                 </Link>
+
+                <Link to = "/users" class="sidebar-link">
+                    Users
+                </Link>
+
             </div>   
         )
     }

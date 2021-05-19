@@ -4,8 +4,7 @@ class AdminPanel extends React.Component {
     render(){
         return(
             <div>
-                <h1>Admin Panel</h1>
-                <button className = "btn btn-primary">Click me!</button> 
+                <h1 class = "screenHeader">Admin Panel</h1>
                 <p>
                 Thank you for taking the time to do the Carna take-home project. It consists of 3 parts:
 
