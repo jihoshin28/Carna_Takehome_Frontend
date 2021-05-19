@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+.graphRow {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  background-color: rgb(245, 245, 245);
+  -webkit-box-shadow: 0px 0 3px rgba(99, 99, 99, 0.842);
+  border-radius: 10px;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  padding: 5%;
+  justify-content: space-around;
+}
+
+.barCol {
+  margin-right: 2%;
+}
+
+.pieCol {
+  margin-left: 2%;
+}
+
+.lineCol {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.graphCol {
+  margin-left: 2%;
+}
+
 .page-display{
   position: absolute;
   margin-top: 2%;
@@ -43,7 +73,7 @@
   left: 0;
   height: 100%;
   width: 15%;
-  z-index: 1;
+  z-index: 3;
   overflow-x: hidden;
 }
 
@@ -76,6 +106,7 @@
  width: 100%;
  height: 7%;
  overflow-y: hidden;
+ z-index: 2;
  background-color:rgb(218, 218, 218);
  box-shadow: 2px 2px 2px #aaaaaa;
 }
@@ -87,7 +118,7 @@
 
 .toolbar-icon {
   width: 20px;
-  height: 20px; 
+  height: 20px;
 }
 
 .screenHeader{

@@ -12,8 +12,8 @@ class Navbar extends React.Component {
                     Carna Admin Panel
                 </Link>
                 
-                <Link to = "/charts" class="sidebar-link">
-                    Charts
+                <Link to = "/data" class="sidebar-link">
+                    Data
                 </Link>
                 
                 <Link to = "/courses" class="sidebar-link">

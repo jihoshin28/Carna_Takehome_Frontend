@@ -6,8 +6,8 @@ class BarGraph extends React.Component{
         return(
             <div>
                 <Chart
-                    width={'600px'}
-                    height={'400px'}
+                    width={'100%'}
+                    height={'500px'}
                     chartType="LineChart"
                     loader={<div>Loading Chart</div>}
                     data={[
