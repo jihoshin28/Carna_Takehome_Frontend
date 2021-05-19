@@ -4,7 +4,6 @@ import {Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import AdminPanel from './screens/AdminPanel'
 import AuthScreen from './screens/AuthScreen'
-import CalendarScreen from './screens/CalendarScreen'
 import ChartsScreen from './screens/ChartsScreen'
 import CoursesScreen from './screens/CoursesScreen'
 import ForumsScreen from './screens/ForumsScreen'
@@ -26,7 +25,6 @@ class App extends React.Component {
           <ToolBar history = {this.props.history}/>
           <Route exact path={'/'} render={(props) => <AdminPanel {...props} />}></Route> 
           <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
-          <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
           <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
           <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
           <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
