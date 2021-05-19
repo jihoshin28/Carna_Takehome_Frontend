@@ -1,12 +1,12 @@
 import React from 'react'
 
-class UserSection extends React.Component{
+class CourseSection extends React.Component{
     
     render(){
         return(
             <div class="userSection">
                 <div class="userHeader">
-                    <h3>User </h3>
+                    <h3>Course</h3>
                 </div>
 
                 <div class="userSection-info">
@@ -38,4 +38,4 @@ class UserSection extends React.Component{
     }
 }
 
-export default UserSection
+export default CourseSection

@@ -8,6 +8,8 @@ class UsersScreen extends React.Component {
                 <h1>Users Screen</h1>
                 <button className = "btn btn-primary">Click me!</button> 
                 <UserSection />
+                <UserSection />
+                <UserSection /> 
             </div>
         )
     }
