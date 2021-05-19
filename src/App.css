@@ -90,12 +90,15 @@
   height: 20px; 
 }
 
-.userSection {
+.screenHeader{
+  margin: 3%;
+}
+
+.section {
   background-color: rgb(245, 245, 245);
   -webkit-box-shadow: 0px 0 3px rgba(99, 99, 99, 0.842);
   padding: 2%;
   width: 100%;
-  height: 100%;
   margin: 10px;
   display: flex;
   flex-flow: row wrap;
@@ -103,7 +106,7 @@
   border-radius: 10px;
 }
 
-.userSection-info{
+.sectionInfo{
   background-color: rgb(245, 245, 245);
   justify-content: flex-end;
   height: 200%;
@@ -115,11 +118,11 @@
   margin: 10px;
 }
 
-.userHeader {
+.sectionHeader {
   align-self: center;
 }
 
-.userButtonBox{
+.sectionButtonBox{
   padding: 10px;
   display: flex;
   flex-flow: column wrap;
@@ -127,9 +130,9 @@
   
 }
 
-.userSectionDetails {
+.sectionButton {
   height: 30%;
-  width: 150%;
+  width: 175%;
   margin-bottom: 3%;
   
 }

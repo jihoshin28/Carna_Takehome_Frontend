@@ -4,12 +4,12 @@ class CourseSection extends React.Component{
     
     render(){
         return(
-            <div class="userSection">
-                <div class="userHeader">
+            <div class="section">
+                <div class="sectionHeader">
                     <h3>Course</h3>
                 </div>
 
-                <div class="userSection-info">
+                <div class="sectionInfo">
                     <p>
                         {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
                     </p>
@@ -20,15 +20,15 @@ class CourseSection extends React.Component{
                         Grocery Store:
                     </p>
                 </div>
-                <div class="userButtonBox">
-                    <button onClick = {() => console.log('see details')} class="btn btn-primary userSectionDetails">
-                        {/* {this.props.paymentText} */}See User Details
+                <div class="sectionButtonBox">
+                    <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
+                        {/* {this.props.paymentText} */}Course Details
                     </button>
-                    <button onClick = {() => console.log('modify')} class="btn btn-warning userSectionDetails">
-                        {/* {this.props.orderButtonTxt} */}Modify User
+                    <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
+                        {/* {this.props.orderButtonTxt} */}Modify Course
                     </button>
-                    <button onClick = {() => console.log('delete')} class="btn btn-danger userSectionDetails">
-                        {/* {this.props.orderButtonTxt} */}Delete User
+                    <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
+                        {/* {this.props.orderButtonTxt} */}Delete Course
                     </button>
 
                 </div>

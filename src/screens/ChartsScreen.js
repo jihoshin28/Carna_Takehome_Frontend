@@ -4,7 +4,7 @@ class CalendarScreen extends React.Component {
     render(){
         return(
             <div>
-                <h1>Charts</h1>
+                <h1 class = "screenHeader">Charts</h1>
                 <button className = "btn btn-primary">Click me!</button> 
                 <p>
                 Thank you for taking the time to do the Carna take-home project. It consists of 3 parts:

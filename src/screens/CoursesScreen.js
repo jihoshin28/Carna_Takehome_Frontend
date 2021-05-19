@@ -5,8 +5,7 @@ class CoursesScreen extends React.Component {
     render(){
         return(
             <div>
-                <h1>Courses Screen</h1>
-                <button className = "btn btn-primary">Click me! </button> 
+                <h1 class = "screenHeader">Courses Screen</h1>
                 <CourseSection/>
                 <CourseSection/>
                 <CourseSection/> 
