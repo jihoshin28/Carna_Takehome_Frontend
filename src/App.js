@@ -8,6 +8,7 @@ import CalendarScreen from './screens/CalendarScreen'
 import ChartsScreen from './screens/ChartsScreen'
 import CoursesScreen from './screens/CoursesScreen'
 import ForumsScreen from './screens/ForumsScreen'
+import GroupsScreen from './screens/GroupsScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import UsersScreen from './screens/UsersScreen'
@@ -28,6 +29,7 @@ class App extends React.Component {
           <Route exact path={'/calendar'} render={(props) => <CalendarScreen {...props} />} />
           <Route exact path={'/charts'} render={(props) => <ChartsScreen {...props} />} />
           <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
+          <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
           <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
           <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
           <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />

@@ -31,6 +31,10 @@ class Navbar extends React.Component {
                 <Link to = '/forums' class="sidebar-link">
                     Forums
                 </Link>
+
+                <Link to = '/groups' class="sidebar-link">
+                    Groups
+                </Link>
             </div>   
         )
     }
