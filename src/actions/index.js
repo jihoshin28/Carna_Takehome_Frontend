@@ -65,10 +65,9 @@ export const getCourses = () => async dispatch => {
 
 export const getGroups = () => async dispatch => {
     const result = await server.get('/groups')
-    console.log(result.data)
     dispatch({
         type: "GET_GROUPS",
-        payload: result.data
+        payload: result.data.groups
     })
 }
 

@@ -11,13 +11,10 @@ class GroupSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
+                        Name of Group: {this.props.name}
                     </p>
                     <p>
-                        Name of Group: We da Best Group
-                    </p>
-                    <p>
-                        Grocery Store:
+                        Group Type: {this.props.type}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
