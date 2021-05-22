@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                     <img class = 'toolbar-icon' src = {`${process.env.PUBLIC_URL}/profile_icon.png`}/>
                 </Link>
 
-                <Link class = 'toolbar-link' to = "/profile" class="toolbar-link">
+                <Link class = 'toolbar-link' to = "/auth" class="toolbar-link">
                     <img class = 'toolbar-icon' src = {`${process.env.PUBLIC_URL}/sign_out_icon.png`}/>
                 </Link>
             </div>   

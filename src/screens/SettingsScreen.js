@@ -4,7 +4,7 @@ class SettingsScreen extends React.Component {
     render(){
         return(
             <div>
-                <h1>Settings Screen</h1>
+                <h1 className = "screenHeader">Settings Screen</h1>
             </div>
         )
     }

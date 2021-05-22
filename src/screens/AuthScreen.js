@@ -4,7 +4,7 @@ class AuthScreen extends React.Component {
     render(){
         return(
             <div>
-                <h1>Auth Screen</h1>
+                <h1 class = "screenHeader">Sign In</h1>
             </div>
         )
     }
