@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {getForums} from '../actions'
 import ForumSection from '../components/ForumSection'
+import Section from '../components/Section'
 
 class ForumsScreen extends React.Component {
     componentDidMount(){
@@ -14,7 +15,11 @@ class ForumsScreen extends React.Component {
                 <h1 class = "screenHeader">Forums Screen</h1>
                 {this.props.forums.map(forum => {
                     console.log(forum)
-                    return <ForumSection name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
+                    return (
+                        <Section>
+                            <ForumSection name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
+                        </Section>
+                    )
                 })}
             </div>
         )

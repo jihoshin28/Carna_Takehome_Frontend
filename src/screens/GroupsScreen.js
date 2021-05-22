@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {getGroups} from '../actions'
 import GroupSection from '../components/GroupSection'
+import Section from '../components/Section'
 
 class GroupsScreen extends React.Component {
     componentDidMount(){
@@ -14,7 +15,11 @@ class GroupsScreen extends React.Component {
                 <h1 class = "screenHeader">Groups Screen</h1>
                 {this.props.groups.map(group => {
                     console.log(group)
-                    return <GroupSection name = {group.name} type = {group.type} imageURL = {group.image} /> 
+                    return (
+                        <Section>
+                            <GroupSection name = {group.name} type = {group.type} imageURL = {group.image} /> 
+                        </Section>
+                    )
                 })}
             </div>
         )

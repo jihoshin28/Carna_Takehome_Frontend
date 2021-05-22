@@ -3,8 +3,6 @@ import React, {useState, useEffect} from 'react'
 let Section = ({children}) => {
     const [ref] = useState(React.createRef())
     useEffect(() => {
-
-        console.log(props)
         const selectedImage = ref.current
         const options = {
             root: null,
@@ -22,7 +20,6 @@ let Section = ({children}) => {
                 imageRender(entry.target)
                 observer.unobserve(entry.target)
             }
-            console.log(entry.isIntersecting, props)
         }, options)
         observer.observe(selectedImage)
     }, [])
@@ -34,4 +31,4 @@ let Section = ({children}) => {
     )
 } 
 
-export default Image
+export default Section

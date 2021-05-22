@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {getStudents} from '../actions'
 import StudentSection from '../components/StudentSection'
+import Section from '../components/Section'
 
 class StudentsScreen extends React.Component {
     componentDidMount(){
@@ -14,7 +15,11 @@ class StudentsScreen extends React.Component {
                 <h1 class = "screenHeader">Students Screen</h1>
                 {this.props.students.map(student => {
                     console.log(student)
-                    return <StudentSection imageURL = {student.image} firstName = {student.first_name} lastName = {student.last_name} email = {student.email}/> 
+                    return(
+                        <Section>
+                            <StudentSection imageURL = {student.image} firstName = {student.first_name} lastName = {student.last_name} email = {student.email}/> 
+                        </Section>
+                    ) 
                 })}
             </div>
         )

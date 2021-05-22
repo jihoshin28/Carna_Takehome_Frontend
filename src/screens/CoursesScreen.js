@@ -2,19 +2,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {getCourses} from '../actions'
 import CourseSection from '../components/CourseSection'
+import Section from '../components/Section'
 
 class CoursesScreen extends React.Component {
     componentDidMount(){
         this.props.getCourses()
-        console.log(this.props.courses)
+        console.log(this.props.courses, "COURSES")
     }
     render(){
         return(
             <div>
                 <h1 class = "screenHeader">Courses Screen</h1>
                 {this.props.courses.map(course => {
-                    console.log(course)
-                    return <CourseSection name = {course.subject} type = {course.subject} imageURL = {course.image}/> 
+                    return(
+                        <Section>
+                            <CourseSection name = {course.subject} type = {course.subject} imageURL = {course.image}/> 
+                        </Section>
+                    ) 
                 })}
             </div>
         )
