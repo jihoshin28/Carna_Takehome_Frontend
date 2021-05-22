@@ -3,7 +3,7 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
-    if(action.type === "GET_STUDENTS"){
+    if(action.type === "GET_FORUMS"){
         return{
             ...state,
             currentForums: action.payload

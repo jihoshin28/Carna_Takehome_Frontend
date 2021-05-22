@@ -1,12 +1,12 @@
 import React from 'react'
 
-class UserSection extends React.Component{
+class StudentSection extends React.Component{
     
     render(){
         return(
             <div class="section">
                 <div class="sectionHeader">
-                    <h3>User</h3>
+                    <h3>Student</h3>
                 </div>
 
                 <div class="sectionInfo">
@@ -14,7 +14,7 @@ class UserSection extends React.Component{
                         {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
                     </p>
                     <p>
-                        Name of User: Bob Clark
+                        Name of Student: Bob Clark
                     </p>
                     <p>
                         Grocery Store:
@@ -22,13 +22,13 @@ class UserSection extends React.Component{
                 </div>
                 <div class="sectionButtonBox">
                     <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
-                        {/* {this.props.paymentText} */}User Details
+                        {/* {this.props.paymentText} */}Student Details
                     </button>
                     <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Modify User
+                        {/* {this.props.orderButtonTxt} */}Modify Student
                     </button>
                     <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Delete User
+                        {/* {this.props.orderButtonTxt} */}Delete Student
                     </button>
 
                 </div>
@@ -38,4 +38,4 @@ class UserSection extends React.Component{
     }
 }
 
-export default UserSection
+export default StudentSection

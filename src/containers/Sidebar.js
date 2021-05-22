@@ -7,13 +7,13 @@ class Navbar extends React.Component {
     render(){
         return(            
             <div class="sidebar" id="navbarNav">
-                <Link class='sidebar-logo' to= '/' >
+                <div class='sidebar-logo' >
                     <img src = {`${process.env.PUBLIC_URL}/admin_panel_logo.png`}/>
                     Carna Admin Panel
-                </Link>
+                </div>
                 
-                <Link to = "/data" class="sidebar-link">
-                    Data
+                <Link to = "/" class="sidebar-link">
+                    Admin
                 </Link>
                 
                 <Link to = "/courses" class="sidebar-link">
