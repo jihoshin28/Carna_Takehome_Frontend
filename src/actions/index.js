@@ -46,7 +46,7 @@ export const getTeachers = () => async dispatch => {
     console.log(result.data)
     dispatch({
         type: "GET_TEACHERS",
-        payload: result.data
+        payload: result.data.teachers
     })
 }
 
@@ -57,7 +57,7 @@ export const getCourses = () => async dispatch => {
     console.log(result.data)
     dispatch({
         type: "GET_COURSES",
-        payload: result.data
+        payload: result.data.teachers
     })
 }
 
