@@ -79,7 +79,7 @@ export const getForums = () => async dispatch => {
     console.log(result.data)
     dispatch({
         type: "GET_FORUMS",
-        payload: result.data
+        payload: result.data.forums
     })
 }
 

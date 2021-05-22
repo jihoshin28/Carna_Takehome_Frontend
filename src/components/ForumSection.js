@@ -2,6 +2,10 @@ import React from 'react'
 
 class ForumSection extends React.Component{
     
+    capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     render(){
         return(
             <div class="section">
@@ -11,13 +15,10 @@ class ForumSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
+                        Name of Group: {this.capitalize(this.props.name)}
                     </p>
                     <p>
-                        Name of Forum: Socrates was a gangster
-                    </p>
-                    <p>
-                        Grocery Store:
+                        {/* Group Type: {this.capitalize(this.props.type)} */}
                     </p>
                 </div>
                 <div class="sectionButtonBox">

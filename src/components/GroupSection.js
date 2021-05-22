@@ -2,6 +2,10 @@ import React from 'react'
 
 class GroupSection extends React.Component{
     
+    capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     render(){
         return(
             <div class="section">
@@ -11,10 +15,10 @@ class GroupSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        Name of Group: {this.props.name}
+                        Name of Group: {this.capitalize(this.props.name)}
                     </p>
                     <p>
-                        Group Type: {this.props.type}
+                        Group Type: {this.capitalize(this.props.type)}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
