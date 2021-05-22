@@ -7,7 +7,7 @@ class CalendarScreen extends React.Component {
     render(){
         return(
             <div>
-                <h1 class = "screenHeader">Data</h1>
+                <h1 class = "screenHeader">Admin</h1>
                 <div className = "container">
                     <div className = "graphRow">
                         <div className = "barCol">

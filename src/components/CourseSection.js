@@ -6,7 +6,7 @@ class CourseSection extends React.Component{
         return(
             <div class="section">
                 <div class="sectionHeader">
-                    <h3>Course</h3>
+                    <img class = "avatar-pic" src = {this.props.imageURL} alt = "avatar"></img> 
                 </div>
 
                 <div class="sectionInfo">

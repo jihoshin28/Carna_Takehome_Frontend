@@ -14,7 +14,7 @@ class ForumsScreen extends React.Component {
                 <h1 class = "screenHeader">Forums Screen</h1>
                 {this.props.forums.map(forum => {
                     console.log(forum)
-                    return <ForumSection name = {forum.name} type = {forum.type} /> 
+                    return <ForumSection name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
                 })}
             </div>
         )

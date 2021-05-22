@@ -169,7 +169,17 @@
 }
 
 .avatar-pic {
-  height: 150%;
-  width: 150%; 
+  height: 170px;
+  width: 170px; 
   border-radius: 10px;
+}
+
+
+.transition{
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
+}
+
+.transition.appear{
+  opacity:1;
 }

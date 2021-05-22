@@ -14,7 +14,7 @@ class GroupsScreen extends React.Component {
                 <h1 class = "screenHeader">Groups Screen</h1>
                 {this.props.groups.map(group => {
                     console.log(group)
-                    return <GroupSection name = {group.name} type = {group.type} /> 
+                    return <GroupSection name = {group.name} type = {group.type} imageURL = {group.image} /> 
                 })}
             </div>
         )
