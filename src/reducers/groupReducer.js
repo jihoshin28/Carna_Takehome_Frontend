@@ -1,12 +1,12 @@
 const INITIAL_STATE = {
-    users: []
+    currentGroups: []
 }
 
 export default (state = INITIAL_STATE, action) => {
-    if(action.type === "GET_USERS"){
+    if(action.type === "GET_STUDENTS"){
         return{
             ...state,
-            users: action.payload
+            currentGroups: action.payload
         }
     }
     return state

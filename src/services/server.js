@@ -1,16 +1,15 @@
 import axios from 'axios'
 
-// let shopperToken = localStorage.getItem('shopper_token')
-// let cartToken = localStorage.getItem('cart_token')
+// let cartToken = localStorage.getItem('token')
 
 const headers = {
     'Content-Type': 'application/json',
     Accepts: 'application/json',
     'Access-Control-Allow-Origin': '*',
-    "Authorization": shopperToken
+    // "Authorization": shopperToken
 }
 
 export default axios.create({
-    // baseURL: 'https://bread-basket-backend.herokuapp.com',
+    baseURL: 'https://localhost:3001/api',
     headers: headers 
 })

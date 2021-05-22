@@ -1,16 +1,28 @@
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import usersReducers from './usersReducers'
+import studentReducer from './studentReducer'
+import teacherReducer from './teacherReducer'
+import forumReducer from './forumReducer'
+import courseReducer from './courseReducer'
+import postReducer from './postReducer'
+import groupReducer from './groupReducer'
+
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['users']
+    whitelist: ['students', 'teachers', 'courses', 'groups', 'forums', 'posts']
 }
 
 const reducer = combineReducers({
-    users: usersReducers
+    students: studentReducer,
+    teachers: teacherReducer,
+    forums: forumReducer,
+    courses: courseReducer,
+    posts: postReducer,
+    groups: groupReducer,
+    
 })
 
 

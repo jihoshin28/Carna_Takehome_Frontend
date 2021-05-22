@@ -1,6 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {getStudents} from '../actions'
 
 class AdminPanel extends React.Component {
+    componentDidMount(){
+        
+    }
     render(){
         return(
             <div>
