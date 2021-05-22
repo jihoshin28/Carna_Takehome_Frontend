@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import TeacherSection from '../components/TeacherSection'
 
 class TeachersScreen extends React.Component {

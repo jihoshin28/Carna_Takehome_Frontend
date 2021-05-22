@@ -9,5 +9,6 @@ export default (state = INITIAL_STATE, action) => {
             currentTeachers: action.payload
         }
     }
+    
     return state
 }

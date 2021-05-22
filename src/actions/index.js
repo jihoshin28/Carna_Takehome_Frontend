@@ -7,9 +7,37 @@ export const getStudents = () => async dispatch => {
     console.log(result.data)
     dispatch({
         type: "GET_STUDENTS",
+        payload: result.data.students
+    })
+}
+
+export const getStudent = (id) => async dispatch => {
+    const result = await server.get(`/student/${id}`)
+    console.log(result.data)
+    dispatch({
+        type: "GET_STUDENT",
         payload: result.data
     })
 }
+
+export const updateStudent = (id, body) => async dispatch => {
+    const result = await server.get(`/student/${id}`)
+    console.log(result.data)
+    dispatch({
+        type: "UPDATE_STUDENT",
+        payload: result.data
+    })
+}
+
+export const deleteStudent = (id) => async dispatch => {
+    const result = await server.get(`/student/${id}`)
+    console.log(result.data)
+    dispatch({
+        type: "DELETE_STUDENT",
+        payload: result.data
+    })
+}
+
 
 // TEACHER ACTIONS
 

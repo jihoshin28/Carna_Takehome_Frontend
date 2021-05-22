@@ -6,18 +6,18 @@ class StudentSection extends React.Component{
         return(
             <div class="section">
                 <div class="sectionHeader">
-                    <h3>Student</h3>
+                    <img class = "avatar-pic" src = {this.props.imageURL} alt = "avatar"></img> 
                 </div>
 
                 <div class="sectionInfo">
                     <p>
-                        {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
+                        First Name: {this.props.firstName}
                     </p>
                     <p>
-                        Name of Student: Bob Clark
+                        Last Name: {this.props.lastName}
                     </p>
                     <p>
-                        Grocery Store:
+                        Email: {this.props.email}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
