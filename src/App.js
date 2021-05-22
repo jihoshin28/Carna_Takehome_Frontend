@@ -9,7 +9,8 @@ import ForumsScreen from './screens/ForumsScreen'
 import GroupsScreen from './screens/GroupsScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import SettingsScreen from './screens/SettingsScreen'
-import UsersScreen from './screens/StudentsScreen'
+import StudentsScreen from './screens/StudentsScreen'
+import TeachersScreen from './screens/TeachersScreen'
 import NavBar from './containers/Sidebar'
 import ToolBar from './containers/Toolbar'
 
@@ -28,7 +29,8 @@ class App extends React.Component {
           <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
           <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
           <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
-          <Route exact path={'/users'} render={(props) => <UsersScreen {...props} />} />
+          <Route exact path={'/students'} render={(props) => <StudentsScreen {...props} />} />
+          <Route exact path={'/teachers'} render={(props) => <TeachersScreen {...props} />} />
         </div>
       </div>
     );

@@ -28,8 +28,12 @@ class Navbar extends React.Component {
                     Groups
                 </Link>
 
-                <Link to = "/users" class="sidebar-link">
-                    Users
+                <Link to = "/students" class="sidebar-link">
+                    Students
+                </Link>
+
+                <Link to = "/teachers" class="sidebar-link">
+                    Teachers
                 </Link>
 
             </div>   
