@@ -186,11 +186,20 @@ export const getAllStudentCourses = () => async dispatch => {
     })
 }
 
-export const getStudentCourseInfo = (student_id) => async dispatch => {
-    const result = await server.get(`/student_courses/${student_id}`)
+export const studentCourseInfo = (student_id) => async dispatch => {
+    const result = await server.get(`/student_courses/student/${student_id}`)
     dispatch({
-        type: "STUDENT_COURSE_INFO",
-        payload: result.data.student_course
+        type: "STUDENT_COURSES_INFO",
+        payload: result.data.student_courses
+    })
+}
+
+export const courseStudentsInfo = (course_id) =>  async dispatch =>  {
+    const result = await server.get(`/student_courses/course/${course_id}`)
+    console.log(result.data)
+    dispatch({
+        type: "COURSE_STUDENTS_INFO",
+        payload:result.data.course_student_info
     })
 }
 

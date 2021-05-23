@@ -18,10 +18,10 @@ class StudentProgressScreen extends React.Component{
                 <h1 class = "screenHeader">Student Progress</h1>
                 <div className = "graphRow">
                     <div className = "barCol">
-                        <PieGraph/>    
+                        <PieGraph dimensions = {['500px', '300px']} />    
                     </div>
                     <div className = "pieCol">
-                        <PieGraph/>
+                        <PieGraph dimensions = {['500px', '300px']} />
                     </div>
                 </div>
             </div>

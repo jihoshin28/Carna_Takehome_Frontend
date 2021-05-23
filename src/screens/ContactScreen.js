@@ -50,7 +50,7 @@ class ContactScreen extends React.Component{
                     <input onChange = {this.onChange} type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
                     <textarea onChange = {this.onChange} class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                 </div>
                 <button class = "btn btn-primary" onClick = {this.sendEmail}>Send Email</button>

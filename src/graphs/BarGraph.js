@@ -6,17 +6,11 @@ class BarGraph extends React.Component{
         return(
             <div>
                 <Chart
-                    width={'500px'}
-                    height={'300px'}
+                    width={this.props.dimensions[0]}
+                    height={this.props.dimensions[1]}
                     chartType="Bar"
                     loader={<div>Loading Chart</div>}
-                    data={[
-                        ['Year', 'Sales', 'Expenses', 'Profit'],
-                        ['2014', 1000, 400, 200],
-                        ['2015', 1170, 460, 250],
-                        ['2016', 660, 1120, 300],
-                        ['2017', 1030, 540, 350],
-                    ]}
+                    data={this.props.data}
                     options={{
                         // Material design options
                         chart: {

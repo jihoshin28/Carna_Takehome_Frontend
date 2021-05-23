@@ -1,25 +1,18 @@
 import React from 'react'
 import Chart from 'react-google-charts'
 
-class BarGraph extends React.Component{
+class PieGraph extends React.Component{
     render(){
         return(
             <div>
                 <Chart
-                width={'500px'}
-                height={'300px'}
+                width={this.props.dimensions[0]}
+                height={this.props.dimensions[1]}
                 chartType="PieChart"
                 loader={<div>Loading Chart</div>}
-                data={[
-                    ['Task', 'Hours per Day'],
-                    ['Work', 11],
-                    ['Eat', 2],
-                    ['Commute', 2],
-                    ['Watch TV', 2],
-                    ['Sleep', 7],
-                ]}
+                data={this.props.data}
                 options={{
-                    title: 'My Daily Activities',
+                    title: `${this.props.title}`,
                 }}
                 rootProps={{ 'data-testid': '1' }}
                 />
@@ -29,4 +22,4 @@ class BarGraph extends React.Component{
 }
 
 
-export default BarGraph
+export default PieGraph

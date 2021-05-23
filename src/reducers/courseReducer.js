@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
     currentCourses: [],
-    selectedCourse: null
+    selectedCourse: null,
+    currentCourseStudents: [],
+    selectedCourseStudent: null
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -31,6 +33,22 @@ export default (state = INITIAL_STATE, action) => {
             selectedCourse: {
                 ...state.selectedCourse,
                 students: state.selectedCourse.students.filter(student => student.id !== action.payload)
+            }
+        }
+    }
+
+    if(action.type === "COURSE_STUDENTS_INFO"){
+        return{
+            ...state,
+            currentCourseStudents: action.payload
+        }
+    }
+
+    if(action.type === "STUDENT_COURSES_INFO"){
+        return{
+            ...state,
+            selectedCourseStudent: {
+                ...state.selec
             }
         }
     }

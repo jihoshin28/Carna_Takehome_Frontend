@@ -1,7 +1,7 @@
 import React from 'react'
 import Chart from 'react-google-charts'
 
-class BarGraph extends React.Component{
+class LineGraph extends React.Component{
     render(){
         return(
             <div>
@@ -41,4 +41,4 @@ class BarGraph extends React.Component{
 }
 
 
-export default BarGraph
+export default LineGraph

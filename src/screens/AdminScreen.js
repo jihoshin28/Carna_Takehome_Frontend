@@ -11,10 +11,10 @@ class CalendarScreen extends React.Component {
                 <div className = "container">
                     <div className = "graphRow">
                         <div className = "barCol">
-                            <BarGraph/>     
+                            <BarGraph dimensions = {['500px', '300px']}/>     
                         </div>
                         <div className = "pieCol">
-                            <PieGraph/>
+                            <PieGraph dimensions = {['500px', '300px']}/>
                         </div>
                     </div>
                     <div className = "graphRow">

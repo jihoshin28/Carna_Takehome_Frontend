@@ -33,14 +33,13 @@ class App extends React.Component {
           <Route exact path={'/contact/:user/:id'} render={(props) => <ContactScreen {...props} />} />
           <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
           <Route exact path={'/course_details/:id'} render={(props) => <CourseDetailsScreen {...props} />} />
-          <Route exact path={'/details/:user/:id'} render={(props) => <DetailsScreen {...props} />} />
           <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
           <Route exact path={'/forum/:id'} render={(props) => <ForumScreen {...props} />} />
           <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
           <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
           <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
           <Route exact path={'/student_list/:group_type/:id'} render={(props) => <StudentsListScreen {...props} />} />
-          <Route exact path={'/student_progress/:student_id'} render={(props) => <StudentProgress {...props} />} />
+          <Route exact path={'/student_progress/:course_id/:student_id'} render={(props) => <StudentProgress {...props} />} />
           <Route exact path={'/students'} render={(props) => <StudentsScreen {...props} />} />
           <Route exact path={'/teachers'} render={(props) => <TeachersScreen {...props} />} />
         </div>

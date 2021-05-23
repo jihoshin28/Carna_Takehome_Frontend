@@ -23,10 +23,7 @@ class StudentSection extends React.Component{
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => this.props.history.push(`/details/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
-                        Student Details
-                    </button>
-                    <button onClick = {() => this.props.history.push(`/contact/student/${this.props.student_id}`)} class="btn btn-warning sectionButton">
+                    <button onClick = {() => this.props.history.push(`/contact/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
                         Contact Student
                     </button>
                     <button onClick = {() => this.props.deleteStudent(this.props.student_id)} class="btn btn-danger sectionButton">
