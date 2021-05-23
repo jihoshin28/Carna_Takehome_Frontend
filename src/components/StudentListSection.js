@@ -8,9 +8,6 @@ class StudentListSection extends React.Component{
         if(type === "group"){
             return(
                 <div class="sectionButtonBox">
-                    <button onClick = {() => this.props.history.push(`/details/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
-                        Student Posts
-                    </button>
                     <button onClick = {() => this.props.removeStudentGroup(this.props.group_id, this.props.student_id)} class = "btn btn-danger sectionButton">
                         Remove From Group
                     </button>

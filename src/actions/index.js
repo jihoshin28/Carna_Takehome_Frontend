@@ -12,7 +12,7 @@ export const getStudents = () => async dispatch => {
 }
 
 export const getStudent = (id) => async dispatch => {
-    const result = await server.get(`/student/${id}`)
+    const result = await server.get(`/students/${id}`)
     console.log(result.data)
     dispatch({
         type: "GET_STUDENT",
