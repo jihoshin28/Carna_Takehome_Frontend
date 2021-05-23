@@ -11,13 +11,10 @@ class CourseSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        {/* Order Cost: ${(this.props.total/100).toFixed(2)} */}
+                        Subject: {this.props.subject}
                     </p>
                     <p>
-                        Name of User: Bob Clark
-                    </p>
-                    <p>
-                        Grocery Store:
+                        Class Size: {this.props.numberEnrolled}
                     </p>
                 </div>
                 <div class="sectionButtonBox">

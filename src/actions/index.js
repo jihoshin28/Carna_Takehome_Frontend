@@ -50,6 +50,16 @@ export const getTeachers = () => async dispatch => {
     })
 }
 
+export const getTeacher = (id) => async dispatch => {
+    const result = await server.get(`/teachers/${id}`)
+    console.log(result.data.teacher)
+    dispatch({
+        type: "GET_TEACHER",
+        payload: result.data.teacher
+    })
+}
+
+
 // COURSE ACTIONS
 
 export const getCourses = () => async dispatch => {

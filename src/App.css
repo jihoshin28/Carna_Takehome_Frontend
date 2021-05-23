@@ -183,3 +183,11 @@
 .transition.appear{
   opacity:1;
 }
+
+.filter-sort-row{
+  margin-bottom: 3%;
+}
+
+.dropdown-item{
+  cursor: pointer;
+}

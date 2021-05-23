@@ -15,10 +15,10 @@ class GroupSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        Name of Group: {this.capitalize(this.props.name)}
+                        Group Name: {this.capitalize(this.props.name)}
                     </p>
                     <p>
-                        Group Type: {this.capitalize(this.props.type)}
+                        Type: {this.capitalize(this.props.type)}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
