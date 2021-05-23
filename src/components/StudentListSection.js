@@ -1,25 +1,11 @@
 import React from 'react'
-import {deleteStudent, removeStudentCourse, removeStudentGroup} from '../actions'
+import {removeStudentCourse, removeStudentGroup} from '../actions'
 import {connect} from 'react-redux'
 
 class StudentListSection extends React.Component{
     
     renderButtons = (type) => {
-        if(!type){
-            return(
-                <div class="sectionButtonBox">
-                    <button onClick = {() => this.props.history.push(`/details/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
-                        Student Details
-                    </button>
-                    <button onClick = {() => this.props.history.push(`/contact/student/${this.props.student_id}`)} class="btn btn-warning sectionButton">
-                        Contact Student
-                    </button>
-                    <button onClick = {() => this.props.deleteStudent(this.props.student_id)} class="btn btn-danger sectionButton">
-                        Delete Student
-                    </button>
-                </div>
-            )
-        } else if(type === "group"){
+        if(type === "group"){
             return(
                 <div class="sectionButtonBox">
                     <button onClick = {() => this.props.history.push(`/details/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
@@ -70,4 +56,4 @@ class StudentListSection extends React.Component{
     }
 }
 
-export default connect(null, {deleteStudent, removeStudentGroup, removeStudentCourse})(StudentListSection)
+export default connect(null, {removeStudentGroup, removeStudentCourse})(StudentListSection)

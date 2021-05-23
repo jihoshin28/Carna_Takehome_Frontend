@@ -20,6 +20,12 @@ class ForumsScreen extends React.Component {
         console.log(this.props.forums)
     }
 
+    componentDidUpdate(){
+        if(this.props.forums !== this.state.forums){
+            this.setState({forums: this.props.forums})
+        }
+    }
+
     sort = (value) => {
         console.log(value)
         let sorted

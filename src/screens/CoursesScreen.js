@@ -20,6 +20,12 @@ class CoursesScreen extends React.Component {
         console.log(this.props.courses, "COURSES")
     }
 
+    componentDidUpdate(){
+        if(this.props.courses !== this.state.courses){
+            this.setState({courses: this.props.courses})
+        }
+    }
+
     sort = (value) => {
         console.log(value)
         let sorted

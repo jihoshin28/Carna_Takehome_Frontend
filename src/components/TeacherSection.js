@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { deleteTeacher} from '../actions'
 
 class TeacherSection extends React.Component{
     
@@ -27,7 +29,7 @@ class TeacherSection extends React.Component{
                     <button onClick = {() => this.props.history.push(`/contact/teacher/${this.props.teacher_id}`)} class="btn btn-warning sectionButton">
                         {/* {this.props.orderButtonTxt} */}Contact Teacher
                     </button>
-                    <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
+                    <button onClick = {() => this.props.deleteTeacher(this.props.teacher_id)} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Teacher
                     </button>
 
@@ -38,4 +40,4 @@ class TeacherSection extends React.Component{
     }
 }
 
-export default TeacherSection
+export default connect(null, {deleteTeacher})(TeacherSection)

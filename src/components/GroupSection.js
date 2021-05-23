@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { deleteGroup } from '../actions'
 
 class GroupSection extends React.Component{
     
@@ -25,7 +27,7 @@ class GroupSection extends React.Component{
                     <button onClick = {() => this.props.history.push(`/student_list/group/${this.props.group_id}`)} class="btn btn-primary sectionButton">
                         {/* {this.props.paymentText} */}Student List
                     </button>
-                    <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
+                    <button onClick = {() => this.props.deleteGroup(this.props.group_id)} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Group
                     </button>
 
@@ -36,4 +38,4 @@ class GroupSection extends React.Component{
     }
 }
 
-export default GroupSection
+export default connect(null, {deleteGroup})(GroupSection)

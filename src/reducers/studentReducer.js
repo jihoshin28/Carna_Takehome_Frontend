@@ -26,10 +26,12 @@ export default (state = INITIAL_STATE, action) => {
     }
 
     if(action.type === "DELETE_STUDENT"){
+
         return{
             ...state,
-            currentStudents: action.payload
+            currentStudents: state.currentStudents.filter(student => student.id !== action.payload)
         }
     }
+    
     return state
 }

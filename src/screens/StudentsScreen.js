@@ -21,25 +21,28 @@ class StudentsScreen extends React.Component {
         console.log(this.props.students)
     }
 
+    componentDidUpdate(){
+        if(this.props.students !== this.state.students){
+            this.setState({students: this.props.students})
+        }
+    }
+
     sort = (value) => {
         console.log(value)
         let sorted
         if(value === 'First Name'){
-            sorted = this.props.students.sort((a,b) => {
+            this.props.students.sort((a,b) => {
                 return a.first_name.localeCompare(b.first_name);
             })
         } else if(value === 'Last Name'){
-            sorted = this.props.students.sort((a,b) => {
+            this.props.students.sort((a,b) => {
                 return a.last_name.localeCompare(b.last_name);
             })
         } else if(value === 'Email'){
-            sorted = this.props.students.sort((a,b) => {
+            this.props.students.sort((a,b) => {
                 return a.email.localeCompare(b.email);
             })
         }
-        this.setState({
-            students: sorted
-        })
     }
 
     render(){
@@ -55,7 +58,6 @@ class StudentsScreen extends React.Component {
                     </div>
                 </div>
                 {this.state.students.map(student => {
-                    console.log(student)
                     return(
                         <Section>
                             <StudentSection student_id = {student.id} history = {this.props.history} imageURL = {student.image} firstName = {student.first_name} lastName = {student.last_name} email = {student.email} city = {student.city} state = {student.state}/> 

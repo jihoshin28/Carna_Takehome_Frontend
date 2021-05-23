@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    currentTeachers: []
+    currentTeachers: [],
+    selectedTeacher: null
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -7,6 +8,21 @@ export default (state = INITIAL_STATE, action) => {
         return{
             ...state,
             currentTeachers: action.payload
+        }
+    }
+
+    if(action.type === "GET_TEACHER"){
+        return{
+            ...state,
+            selectedTeacher: action.payload
+        }
+    }
+
+    if(action.type === "DELETE_TEACHER"){
+
+        return{
+            ...state,
+            currentTeachers: state.currentTeachers.filter(teacher => teacher.id !== action.payload)
         }
     }
     

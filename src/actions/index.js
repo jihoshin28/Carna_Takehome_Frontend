@@ -30,8 +30,12 @@ export const getStudent = (id) => async dispatch => {
 // }
 
 export const deleteStudent = (id) => async dispatch => {
-    const result = await server.delete(`/student/${id}`)
-    console.log(result.data)
+    const result = await server.delete(`/students/${id}`)
+    console.log(result)
+    dispatch({
+        type: "DELETE_STUDENT",
+        payload: id
+    })
 }
 
 
@@ -52,6 +56,15 @@ export const getTeacher = (id) => async dispatch => {
     dispatch({
         type: "GET_TEACHER",
         payload: result.data.teacher
+    })
+}
+
+export const deleteTeacher = (id) => async dispatch => {
+    const result = await server.delete(`/teachers/${id}`)
+    console.log(result)
+    dispatch({
+        type: "DELETE_TEACHER",
+        payload: id
     })
 }
 
@@ -76,6 +89,15 @@ export const getCourse = (id) => async dispatch => {
     })
 }
 
+export const deleteCourse = (id) => async dispatch => {
+    const result = await server.delete(`/courses/${id}`)
+    console.log(result)
+    dispatch({
+        type: "DELETE_COURSE",
+        payload: id
+    })
+}
+
 // GROUP ACTIONS
 
 export const getGroups = () => async dispatch => {
@@ -95,7 +117,14 @@ export const getGroup = (id) => async dispatch => {
     })
 }
 
-
+export const deleteGroup = (id) => async dispatch => {
+    const result = await server.delete(`/groups/${id}`)
+    console.log(result)
+    dispatch({
+        type: "DELETE_GROUP",
+        payload: id
+    })
+}
 
 // FORUM ACTIONS
 
@@ -114,6 +143,15 @@ export const getForum = (id) => async dispatch => {
     dispatch({
         type: "GET_FORUM",
         payload: result.data.forum
+    })
+}
+
+export const deleteForum = (id) => async dispatch => {
+    const result = await server.delete(`/forums/${id}`)
+    console.log(result)
+    dispatch({
+        type: "DELETE_FORUM",
+        payload: id
     })
 }
 
@@ -138,12 +176,25 @@ export const getPost = (id) => async dispatch => {
     })
 }
 
+// STUDENT COURSE ACTIONS
+
 export const removeStudentCourse = (course_id, student_id) => async dispatch => {
     console.log(course_id, student_id)
-    const result = await server.delete(`/student_courses?course_id=${course_id}&student_id=${student_id}`)
+    const result = await server.delete(`/student_courses/${course_id}/${student_id}`)
+    console.log(result)
+    dispatch({
+        type: "REMOVE_STUDENT_COURSE",
+        payload: student_id
+    })
 } 
+
+// STUDENT GROUP ACTIONS
 
 export const removeStudentGroup = (group_id, student_id) => async dispatch => {
     console.log(group_id, student_id)
-    const result = await server.delete(`/student_groups/?group_id=${group_id}&student_id=${student_id}`)
+    const result = await server.delete(`/student_groups/${group_id}/${student_id}`)
+    dispatch({
+        type: "REMOVE_STUDENT_GROUP",
+        payload: student_id
+    })
 } 

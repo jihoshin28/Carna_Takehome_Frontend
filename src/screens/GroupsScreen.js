@@ -20,6 +20,12 @@ class GroupsScreen extends React.Component {
         console.log(this.props.groups)
     }
 
+    componentDidUpdate(){
+        if(this.props.groups !== this.state.groups){
+            this.setState({groups: this.props.groups})
+        }
+    }
+
     sort = (value) => {
         console.log(value)
         let sorted
@@ -71,7 +77,6 @@ class GroupsScreen extends React.Component {
                     </div>
                 </div>
                 {this.state.groups.map(group => {
-                    console.log(group)
                     return (
                         <Section>
                             <GroupSection group_id = {group.id} history = {this.props.history} name = {group.name} type = {group.type} imageURL = {group.image} /> 

@@ -17,5 +17,25 @@ export default (state = INITIAL_STATE, action) => {
             selectedGroup: action.payload
         }
     }
+
+    if(action.type === "DELETE_GROUP"){
+
+        return{
+            ...state,
+            currentGroups: state.currentGroups.filter(group => group.id !== action.payload)
+        }
+    }
+
+    if(action.type === "REMOVE_STUDENT_GROUP"){
+        return {
+            ...state,
+            selectedGroup: {
+                ...state.selectedGroup,
+                students: state.selectedGroup.students.filter(student => student.id !== action.payload)
+            }
+        }
+    }
+
+
     return state
 }
