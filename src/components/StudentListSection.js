@@ -19,7 +19,7 @@ class StudentListSection extends React.Component{
         } else if(type === "course"){
             return(
                 <div class="sectionButtonBox">
-                    <button onClick = {() => this.props.history.push(`/details/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
+                    <button onClick = {() => this.props.history.push(`/student_progress/${this.props.student_id}`)} class="btn btn-primary sectionButton">
                         Student Progress
                     </button>
                     <button onClick = {() => this.props.removeStudentCourse(this.props.course_id, this.props.student_id)} class="btn btn-danger sectionButton">

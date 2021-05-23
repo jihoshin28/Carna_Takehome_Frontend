@@ -23,8 +23,8 @@ class CourseSection extends React.Component{
                     <button onClick = {() => this.props.history.push(`/student_list/course/${this.props.course_id}`)} class="btn btn-primary sectionButton">
                         {/* {this.props.paymentText} */}Student List
                     </button>
-                    <button onClick = {() => this.props.history.push(`/course_stats/${this.props.course_id}`)} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Course Stats
+                    <button onClick = {() => this.props.history.push(`/course_details/${this.props.course_id}`)} class="btn btn-warning sectionButton">
+                        {/* {this.props.orderButtonTxt} */}Course Details
                     </button>
                     <button onClick = {() => this.props.deleteCourse(this.props.course_id)} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Course

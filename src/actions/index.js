@@ -178,6 +178,23 @@ export const getPost = (id) => async dispatch => {
 
 // STUDENT COURSE ACTIONS
 
+export const getAllStudentCourses = () => async dispatch => {
+    const result = await server.get('/student_courses')
+    dispatch({
+        type: "GET_STUDENT_COURSES",
+        payload: result.data.student_courses
+    })
+}
+
+export const getStudentCourseInfo = (student_id) => async dispatch => {
+    const result = await server.get(`/student_courses/${student_id}`)
+    dispatch({
+        type: "STUDENT_COURSE_INFO",
+        payload: result.data.student_course
+    })
+}
+
+
 export const removeStudentCourse = (course_id, student_id) => async dispatch => {
     console.log(course_id, student_id)
     const result = await server.delete(`/student_courses/${course_id}/${student_id}`)
