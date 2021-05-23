@@ -1,6 +1,6 @@
 import React from 'react'
 
-class DetailsScreen extends React.Component{
+class ContactScreen extends React.Component{
 
     componentDidMount(){
         console.log(this.props.match.params)
@@ -10,11 +10,11 @@ class DetailsScreen extends React.Component{
         return(
             <div>
                 <h1>
-                    Details Screen
+                    Contact Screen
                 </h1> 
             </div> 
         )   
     }
 }
 
-export default DetailsScreen
+export default ContactScreen

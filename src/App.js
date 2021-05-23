@@ -4,11 +4,16 @@ import {Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import AuthScreen from './screens/AuthScreen'
 import AdminScreen from './screens/AdminScreen'
+import ContactScreen from './screens/ContactScreen'
 import CoursesScreen from './screens/CoursesScreen'
+import CourseStatsScreen from './screens/CourseStatsScreen'
+import DetailsScreen from './screens/DetailsScreen'
+import ForumScreen from './screens/ForumsScreen'
 import ForumsScreen from './screens/ForumsScreen'
 import GroupsScreen from './screens/GroupsScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import SettingsScreen from './screens/SettingsScreen'
+import StudentsListScreen from './screens/StudentsListScreen'
 import StudentsScreen from './screens/StudentsScreen'
 import TeachersScreen from './screens/TeachersScreen'
 import NavBar from './containers/Sidebar'
@@ -24,11 +29,16 @@ class App extends React.Component {
           <ToolBar history = {this.props.history}/>
           <Route exact path={'/'} render={(props) => <AdminScreen {...props} />} />
           <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
+          <Route exact path={'/contact/:user/:id'} render={(props) => <ContactScreen {...props} />} />
           <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
+          <Route exact path={'/course_stats/:id'} render={(props) => <CourseStatsScreen {...props} />} />
+          <Route exact path={'/details/:user/:id'} render={(props) => <DetailsScreen {...props} />} />
           <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
+          <Route exact path={'/forum'} render={(props) => <ForumScreen {...props} />} />
           <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
           <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
           <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
+          <Route exact path={'/student_list/:group_type/:id'} render={(props) => <StudentsListScreen {...props} />} />
           <Route exact path={'/students'} render={(props) => <StudentsScreen {...props} />} />
           <Route exact path={'/teachers'} render={(props) => <TeachersScreen {...props} />} />
         </div>

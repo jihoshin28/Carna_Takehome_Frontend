@@ -74,7 +74,7 @@ class GroupsScreen extends React.Component {
                     console.log(group)
                     return (
                         <Section>
-                            <GroupSection name = {group.name} type = {group.type} imageURL = {group.image} /> 
+                            <GroupSection group_id = {group.id} history = {this.props.history} name = {group.name} type = {group.type} imageURL = {group.image} /> 
                         </Section>
                     )
                 })}

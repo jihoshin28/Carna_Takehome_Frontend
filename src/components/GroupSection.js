@@ -22,11 +22,8 @@ class GroupSection extends React.Component{
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
-                        {/* {this.props.paymentText} */}Group Details
-                    </button>
-                    <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Modify Group
+                    <button onClick = {() => this.props.history.push(`/student_list/group/${this.props.group_id}`)} class="btn btn-primary sectionButton">
+                        {/* {this.props.paymentText} */}Student List
                     </button>
                     <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Group

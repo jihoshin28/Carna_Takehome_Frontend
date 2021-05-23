@@ -74,7 +74,7 @@ class ForumsScreen extends React.Component {
                     console.log(forum)
                     return (
                         <Section>
-                            <ForumSection name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
+                            <ForumSection forum_id = {forum.id} history = {this.props.history} name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
                         </Section>
                     )
                 })}

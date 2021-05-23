@@ -22,11 +22,8 @@ class ForumSection extends React.Component{
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
-                        {/* {this.props.paymentText} */}Forum Details
-                    </button>
-                    <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Modify Forum
+                    <button onClick = {() => this.props.history.push(`/forum/${this.props.forum_id}`)} class="btn btn-primary sectionButton">
+                        {/* {this.props.paymentText} */}Forum
                     </button>
                     <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Forum

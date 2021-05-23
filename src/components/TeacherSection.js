@@ -11,21 +11,21 @@ class TeacherSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        First Name: {this.props.firstName}
+                        Name: {this.props.firstName} {this.props.lastName}
                     </p>
                     <p>
-                        Last Name: {this.props.lastName}
+                        Location: {this.props.city}, {this.props.state}
                     </p>
                     <p>
                         Email: {this.props.email}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
+                <button onClick = {() => this.props.history.push(`/details/teacher/${this.props.teacher_id}`)} class="btn btn-primary sectionButton">
                         {/* {this.props.paymentText} */}Teacher Details
                     </button>
-                    <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Modify Teacher
+                    <button onClick = {() => this.props.history.push(`/contact/teacher/${this.props.teacher_id}`)} class="btn btn-warning sectionButton">
+                        {/* {this.props.orderButtonTxt} */}Contact Teacher
                     </button>
                     <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Teacher

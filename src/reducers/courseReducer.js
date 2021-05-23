@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    currentCourses: []
+    currentCourses: [],
+    selectedCourse: null
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -7,6 +8,13 @@ export default (state = INITIAL_STATE, action) => {
         return{
             ...state,
             currentCourses: action.payload
+        }
+    }
+
+    if(action.type === "GET_COURSE"){
+        return{
+            ...state, 
+            selectedCourse: action.payload
         }
     }
     return state

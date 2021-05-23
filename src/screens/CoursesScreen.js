@@ -88,7 +88,7 @@ class CoursesScreen extends React.Component {
                 {this.state.courses.map(course => {
                     return(
                         <Section>
-                            <CourseSection subject = {course.subject} type = {course.subject} imageURL = {course.image} numberEnrolled = {course.students.length}/> 
+                            <CourseSection course_id = {course.id} history = {this.props.history} subject = {course.subject} type = {course.subject} imageURL = {course.image} numberEnrolled = {course.students.length}/> 
                         </Section>
                     ) 
                 })}

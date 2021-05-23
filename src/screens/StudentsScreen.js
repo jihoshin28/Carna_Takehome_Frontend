@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {getStudents} from '../actions'
+import {getStudents, deleteStudent } from '../actions'
 import StudentSection from '../components/StudentSection'
 import Section from '../components/Section'
 import Filter from '../components/Filter'
@@ -16,6 +16,7 @@ class StudentsScreen extends React.Component {
     }
     
     componentDidMount(){
+        console.log(this.state)
         this.props.getStudents()
         console.log(this.props.students)
     }
@@ -57,7 +58,7 @@ class StudentsScreen extends React.Component {
                     console.log(student)
                     return(
                         <Section>
-                            <StudentSection imageURL = {student.image} firstName = {student.first_name} lastName = {student.last_name} email = {student.email}/> 
+                            <StudentSection student_id = {student.id} history = {this.props.history} imageURL = {student.image} firstName = {student.first_name} lastName = {student.last_name} email = {student.email} city = {student.city} state = {student.state}/> 
                         </Section>
                     ) 
                 })}

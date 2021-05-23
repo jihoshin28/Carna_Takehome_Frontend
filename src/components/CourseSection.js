@@ -18,11 +18,11 @@ class CourseSection extends React.Component{
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => console.log('see details')} class="btn btn-primary sectionButton">
-                        {/* {this.props.paymentText} */}Course Details
+                    <button onClick = {() => this.props.history.push(`/student_list/course/${this.props.course_id}`)} class="btn btn-primary sectionButton">
+                        {/* {this.props.paymentText} */}Student List
                     </button>
-                    <button onClick = {() => console.log('modify')} class="btn btn-warning sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Modify Course
+                    <button onClick = {() => this.props.history.push(`/course_stats/${this.props.course_id}`)} class="btn btn-warning sectionButton">
+                        {/* {this.props.orderButtonTxt} */}Course Stats
                     </button>
                     <button onClick = {() => console.log('delete')} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Course
