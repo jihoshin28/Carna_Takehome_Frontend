@@ -163,7 +163,7 @@ export const getPosts = () => async dispatch => {
     console.log(result.data)
     dispatch({
         type: "GET_POSTS",
-        payload: result.data
+        payload: result.data.posts
     })
 }
 
@@ -180,8 +180,9 @@ export const getPost = (id) => async dispatch => {
 
 export const getAllStudentCourses = () => async dispatch => {
     const result = await server.get('/student_courses')
+    console.log(result)
     dispatch({
-        type: "GET_STUDENT_COURSES",
+        type: "ALL_STUDENT_COURSES",
         payload: result.data.student_courses
     })
 }
@@ -215,6 +216,16 @@ export const removeStudentCourse = (course_id, student_id) => async dispatch => 
 } 
 
 // STUDENT GROUP ACTIONS
+
+export const getStudentGroups = () => async dispatch => {
+    const result = await server.get('/student_groups')
+    console.log(result.data)
+    dispatch({
+        type: "GET_STUDENT_GROUPS",
+        payload: result.data.student_groups
+
+    })
+}
 
 export const removeStudentGroup = (group_id, student_id) => async dispatch => {
     console.log(group_id, student_id)

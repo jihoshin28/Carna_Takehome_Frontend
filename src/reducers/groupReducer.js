@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     currentGroups: [],
-    selectedGroup: []
+    selectedGroup: [],
+    allStudentGroups: []
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -23,6 +24,13 @@ export default (state = INITIAL_STATE, action) => {
         return{
             ...state,
             currentGroups: state.currentGroups.filter(group => group.id !== action.payload)
+        }
+    }
+
+    if(action.type === "GET_STUDENT_GROUPS"){
+        return {
+            ...state,
+            allStudentGroups: action.payload
         }
     }
 

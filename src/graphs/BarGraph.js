@@ -8,16 +8,22 @@ class BarGraph extends React.Component{
                 <Chart
                     width={this.props.dimensions[0]}
                     height={this.props.dimensions[1]}
-                    chartType="Bar"
+                    chartType="BarChart"
                     loader={<div>Loading Chart</div>}
                     data={this.props.data}
                     options={{
                         // Material design options
-                        chart: {
-                        title: 'Company Performance',
-                        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                        title: `${this.props.title}`,
+                        hAxis: {
+                            title: `${this.props.xLabel}`,
+                            minValue: 0,
+                        },
+                        vAxis: {
+                            title: `${this.props.yLabel}`,
                         },
                     }}
+
+                  
                     // For tests
                 rootProps={{ 'data-testid': '2' }}
                 />

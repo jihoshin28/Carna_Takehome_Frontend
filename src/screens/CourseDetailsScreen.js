@@ -65,7 +65,7 @@ class CourseDetailsScreen extends React.Component{
     }
 
     studentsBarGraphData = () => {
-        let data = [['Student', 'Completion', 'Scores']]
+        let data = [['Student', 'Completion', 'Score']]
         this.props.courseStudents.forEach((studentCourse) => {
             let array = []
             let studentName = this.props.students.find(student => {
@@ -94,7 +94,7 @@ class CourseDetailsScreen extends React.Component{
                 </div>
                 <div className = "graphRow">
                     <div className = "lineCol">
-                        <BarGraph dimensions = {['100%', '500px']} data = {this.studentsBarGraphData()}/>
+                        <BarGraph dimensions = {['100%', '500px']} data = {this.studentsBarGraphData()} title = "Students Completion Percentage and Scores" yLabel = "Students" xLabel = ""/>
                     </div>
                 </div>
             </div>
