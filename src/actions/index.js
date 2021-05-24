@@ -235,3 +235,12 @@ export const removeStudentGroup = (group_id, student_id) => async dispatch => {
         payload: student_id
     })
 } 
+
+// MISCELLANEOUS ACTIONS
+
+export const getGraphSetting = (graph_type) => {
+    return {
+        type: "SET_GRAPH_TYPE",
+        payload: graph_type
+    }
+}

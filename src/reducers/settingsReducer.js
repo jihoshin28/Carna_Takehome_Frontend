@@ -1,15 +1,14 @@
 const INITIAL_STATE = {
-    currentPosts: [],
     graphType: "course"
 }
 
 export default (state = INITIAL_STATE, action) => {
-    if(action.type === "GET_POSTS"){
-        return{
+
+    if(action.type = "SET_GRAPH_TYPE"){
+        return {
             ...state,
-            currentPosts: action.payload
+            graphType: action.payload
         }
     }
-    
     return state
 }
