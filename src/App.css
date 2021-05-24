@@ -250,3 +250,27 @@
   margin-bottom: 3%;
   float:left;
 }
+
+.postSection {
+  background-color: rgb(245, 245, 245);
+  -webkit-box-shadow: 0px 0 3px rgba(99, 99, 99, 0.842);
+  padding: 3%;
+  width: 98.5%;
+  height: 150%;
+  margin: 10px;
+  margin-right: 5%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.postSectionHeader {
+  margin-bottom: 3%;
+  float:left;
+}
+
+.postButton {
+  align-self:center;
+}

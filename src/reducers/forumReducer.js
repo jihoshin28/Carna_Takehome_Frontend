@@ -17,6 +17,16 @@ export default (state = INITIAL_STATE, action) => {
         }
     }
 
+    if(action.type === "CREATE_FORUM"){
+        return{
+            ...state, 
+            currentForums: [
+                ...state.currentForums, action.payload
+            ]
+        }
+        console.log(state.currentForums)
+    }
+
     if(action.type === "DELETE_FORUM"){
 
         return{

@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
     currentGroups: [],
-    selectedGroup: [],
+    selectedGroup: {
+        students: []
+    },
     allStudentGroups: []
 }
 
@@ -17,6 +19,16 @@ export default (state = INITIAL_STATE, action) => {
             ...state, 
             selectedGroup: action.payload
         }
+    }
+
+    if(action.type === "CREATE_GROUP"){
+        return{
+            ...state, 
+            currentGroups: [
+                ...state.currentGroups, action.payload
+            ]
+        }
+        console.log(state.currentGroups)
     }
 
     if(action.type === "DELETE_GROUP"){

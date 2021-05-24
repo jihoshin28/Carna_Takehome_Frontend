@@ -8,7 +8,6 @@ import courseReducer from './courseReducer'
 import postReducer from './postReducer'
 import groupReducer from './groupReducer'
 
-
 const persistConfig = {
     key: 'root',
     storage,
@@ -21,8 +20,7 @@ const reducer = combineReducers({
     forums: forumReducer,
     courses: courseReducer,
     posts: postReducer,
-    groups: groupReducer,
-    
+    groups: groupReducer
 })
 
 

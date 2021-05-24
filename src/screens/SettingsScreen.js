@@ -1,15 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { setGraphSetting } from '../actions'
 
 class SettingsScreen extends React.Component {
+
+    selectGraphType = (e) => {
+        console.log(e.target.value)
+        this.props.setGraphSetting(e.target.value)
+    }
+
     render(){
         return(
             <div className = "container">
-                <h1 className = "screenHeader">Settings Screen</h1>
+                <h1 className = "screenHeader">Settings</h1>
                 <div className = "settingSection">
-                    <h4 className = "settingSectionHeader">Select Graph Data</h4>
+                    <h4 className = "settingSectionHeader">Select Admin Section</h4>
                     <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Data Type</label>
-                            <select class="form-select" id="inputGroupSelect01">
+                        <label class="input-group-text" for="inputGroupSelect01">Section Type</label>
+                            <select onChange = {this.selectGraphType}class="form-select" id="inputGroupSelect01">
                                 <option selected>Choose...</option>
                                 <option value="course">Course</option>
                                 <option value="group">Group</option>
@@ -46,4 +54,10 @@ class SettingsScreen extends React.Component {
     }
 }
 
-export default SettingsScreen
+const mapStateToProps = (state) => {
+    return {
+        adminState: state.admin
+    }
+}
+
+export default connect(mapStateToProps, { setGraphSetting })(SettingsScreen)

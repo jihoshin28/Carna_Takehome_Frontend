@@ -1,24 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getGraphSetting } from '../actions'
-import ClassSection from '../graphs/graphSections/CourseSection'
-import GroupSection from '../graphs/graphSections/GroupSection'
-import ForumSection from '../graphs/graphSections/ForumSection'
+import ClassSection from '../admin_sections/CourseAdmin'
+import GroupSection from '../admin_sections/GroupAdmin'
+import ForumSection from '../admin_sections/ForumAdmin'
 
 class AdminScreen extends React.Component {
 
-    async componentDidMount(){
-        await this.props.getGraphSetting()
+    renderSection(){
+        let graphType = this.props.graphType
+        if(graphType === "course"){
+            return <ClassSection/>
+        } else if (graphType === "group"){
+            return <GroupSection/>
+        } else if (graphType === "forum"){
+            return <ForumSection/>
+        }
     }
 
     render(){
+        console.log(this.props.graphType)
         return(
             <div>
-                <h1 class = "screenHeader">Admin</h1>
                 <div className = "container">
-                    <ClassSection/>
-                    <GroupSection/>
-                    <ForumSection/>
+                    {this.renderSection()}
                 </div>
             </div>
             
@@ -28,11 +32,9 @@ class AdminScreen extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        courses: state.courses.currentCourses, 
-        studentCourses: state.courses.allStudentCourses,
-        studentGroups: state.groups.allStudentGroups
+        graphType: state.teachers.graphType
     }
     
 }
 
-export default connect(mapStateToProps, {getGraphSetting})(AdminScreen)
+export default connect(mapStateToProps, {})(AdminScreen)

@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
     currentCourses: [],
-    selectedCourse: null,
+    selectedCourse: {
+        students: []
+    },
     allStudentCourses: [],
     currentCourseStudents: [],
     selectedCourseStudent: null
@@ -19,6 +21,16 @@ export default (state = INITIAL_STATE, action) => {
             ...state, 
             selectedCourse: action.payload
         }
+    }
+
+    if(action.type === "CREATE_COURSE"){
+        return{
+            ...state, 
+            currentCourses: [
+                ...state.currentCourses, action.payload
+            ]
+        }
+        console.log(state.currentCourses)
     }
 
     if(action.type === "DELETE_COURSE"){

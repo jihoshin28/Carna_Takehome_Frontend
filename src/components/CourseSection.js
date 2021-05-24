@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 
 class CourseSection extends React.Component{
     
+    capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     render(){
         return(
             <div class="section">
@@ -13,7 +17,7 @@ class CourseSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        Subject: {this.props.subject}
+                        Subject: {this.capitalize(this.props.subject)}
                     </p>
                     <p>
                         Class Size: {this.props.numberEnrolled}

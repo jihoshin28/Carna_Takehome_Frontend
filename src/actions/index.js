@@ -1,5 +1,26 @@
 import server from '../services/server'
 
+// ADMIN ACTIONS
+
+export const getAdminData = () => async dispatch => {
+    const result = await server.get('/user')
+    console.log(result)
+    dispatch({
+        type: "GET_ADMIN_DATA",
+        payload: result.data.user
+    })
+}
+
+// AUTH ACTIONS
+
+// export const signIn = () => {
+
+// }
+
+// export const logIn = () => {
+
+// }
+
 // STUDENT ACTIONS
 
 export const getStudents = () => async dispatch => {
@@ -80,6 +101,13 @@ export const getCourses = () => async dispatch => {
     })
 }
 
+export const createCourse = courseInfo => async dispatch => {
+    console.log(courseInfo)
+    const result = await server.post('/courses', {courseInfo})
+    console.log(result.data)
+    dispatch({ type: 'CREATE_COURSE', payload: result.data.course})
+}
+
 export const getCourse = (id) => async dispatch => {
     const result = await server.get(`/courses/${id}`)
     console.log(result.data)
@@ -117,6 +145,13 @@ export const getGroup = (id) => async dispatch => {
     })
 }
 
+export const createGroup = groupInfo => async dispatch => {
+    console.log(groupInfo)
+    const result = await server.post('/groups', {groupInfo})
+    console.log(result.data)
+    dispatch({ type: 'CREATE_GROUP', payload: result.data.group})
+}
+
 export const deleteGroup = (id) => async dispatch => {
     const result = await server.delete(`/groups/${id}`)
     console.log(result)
@@ -144,6 +179,13 @@ export const getForum = (id) => async dispatch => {
         type: "GET_FORUM",
         payload: result.data.forum
     })
+}
+
+export const createForum = forumInfo => async dispatch => {
+    console.log(forumInfo)
+    const result = await server.post('/forums', {forumInfo})
+    console.log(result.data)
+    dispatch({ type: 'CREATE_FORUM', payload: result.data.forum})
 }
 
 export const deleteForum = (id) => async dispatch => {
@@ -195,6 +237,12 @@ export const studentCourseInfo = (student_id) => async dispatch => {
     })
 }
 
+export const createStudentCourse = (studentCourseInfo) => async dispatch => {
+    const result = await server.post('/student_courses', {studentCourseInfo})
+    console.log(result.data)
+    // dispatch({ type: 'CREATE_FORUM', payload: result.data.forum})
+}
+
 export const courseStudentsInfo = (course_id) =>  async dispatch =>  {
     const result = await server.get(`/student_courses/course/${course_id}`)
     console.log(result.data)
@@ -227,9 +275,15 @@ export const getStudentGroups = () => async dispatch => {
     })
 }
 
+export const createStudentGroup = (studentGroupInfo) => async dispatch => {
+    const result = await server.post('/student_groups', {studentGroupInfo})
+    console.log(result.data)
+    // dispatch({ type: 'CREATE_FORUM', payload: result.data.forum})
+}
+
 export const removeStudentGroup = (group_id, student_id) => async dispatch => {
     console.log(group_id, student_id)
-    const result = await server.delete(`/student_groups/${group_id}/${student_id}`)
+    await server.delete(`/student_groups/${group_id}/${student_id}`)
     dispatch({
         type: "REMOVE_STUDENT_GROUP",
         payload: student_id
@@ -238,7 +292,7 @@ export const removeStudentGroup = (group_id, student_id) => async dispatch => {
 
 // MISCELLANEOUS ACTIONS
 
-export const getGraphSetting = (graph_type) => {
+export const setGraphSetting = (graph_type) => {
     return {
         type: "SET_GRAPH_TYPE",
         payload: graph_type
