@@ -30,7 +30,6 @@ export default (state = INITIAL_STATE, action) => {
                 ...state.currentCourses, action.payload
             ]
         }
-        console.log(state.currentCourses)
     }
 
     if(action.type === "DELETE_COURSE"){
@@ -64,12 +63,10 @@ export default (state = INITIAL_STATE, action) => {
         }
     }
 
-    if(action.type === "STUDENT_COURSES_INFO"){
+    if(action.type === "COURSE_STUDENT_INFO"){
         return{
             ...state,
-            selectedCourseStudent: {
-                ...state.selec
-            }
+            selectedCourseStudent: action.payload
         }
     }
     return state

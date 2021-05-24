@@ -24,10 +24,10 @@ class TeacherSection extends React.Component{
                 </div>
                 <div class="sectionButtonBox">
                     <button onClick = {() => this.props.history.push(`/contact/teacher/${this.props.teacher_id}`)} class="btn btn-primary sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Contact Teacher
+                        Contact Teacher
                     </button>
                     <button onClick = {() => this.props.deleteTeacher(this.props.teacher_id)} class="btn btn-danger sectionButton">
-                        {/* {this.props.orderButtonTxt} */}Delete Teacher
+                        Delete Teacher
                     </button>
 
                 </div>

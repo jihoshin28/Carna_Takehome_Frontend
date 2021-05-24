@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCourse, getGroup, removeStudentGroup, removeStudentCourse } from '../actions'
+import { getCourse, getGroup } from '../actions'
 import Section from '../components/Section'
 import StudentListSection from '../components/StudentListSection'
 

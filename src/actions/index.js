@@ -229,11 +229,12 @@ export const getAllStudentCourses = () => async dispatch => {
     })
 }
 
-export const studentCourseInfo = (student_id) => async dispatch => {
-    const result = await server.get(`/student_courses/student/${student_id}`)
+export const getStudentCourse = (course_id, student_id) => async dispatch =>  {
+    const result = await server.get(`/student_courses/${course_id}/${student_id}`)
+    console.log(result)
     dispatch({
-        type: "STUDENT_COURSES_INFO",
-        payload: result.data.student_courses
+        type: "COURSE_STUDENT_INFO",
+        payload: result.data.course_student_info
     })
 }
 
