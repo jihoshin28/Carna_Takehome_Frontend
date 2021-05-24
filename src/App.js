@@ -10,7 +10,7 @@ import CourseDetailsScreen from './screens/CourseDetailsScreen'
 import ForumScreen from './screens/ForumScreen'
 import ForumsScreen from './screens/ForumsScreen'
 import GroupsScreen from './screens/GroupsScreen'
-import ProfileScreen from './screens/ProfileScreen'
+// import SignUpScreen from './screens/SignUpScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import StudentsListScreen from './screens/StudentsListScreen'
 import StudentProgress from './screens/StudentProgress'
@@ -35,7 +35,7 @@ class App extends React.Component {
           <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
           <Route exact path={'/forum/:id'} render={(props) => <ForumScreen {...props} />} />
           <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
-          <Route exact path={'/profile'} render={(props) => <ProfileScreen {...props} />} />
+          {/* <Route exact path={'/signup'} render={(props) => <SignUpScreen {...props} />} /> */}
           <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
           <Route exact path={'/student_list/:group_type/:id'} render={(props) => <StudentsListScreen {...props} />} />
           <Route exact path={'/student_progress/:course_id/:student_id'} render={(props) => <StudentProgress {...props} />} />

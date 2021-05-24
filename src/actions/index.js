@@ -13,9 +13,10 @@ export const getAdminData = () => async dispatch => {
 
 // AUTH ACTIONS
 
-// export const signIn = () => {
-
-// }
+export const signIn = (authInfo) => async dispatch => {
+    const result = await server.post('/login', authInfo)
+    console.log(result.data)
+}
 
 // export const logIn = () => {
 
