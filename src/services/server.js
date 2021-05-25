@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-// let cartToken = localStorage.getItem('token')
+let token = localStorage.getItem('token')
 
 const headers = {
     'Content-Type': 'application/json',
     Accepts: 'application/json',
     'Access-Control-Allow-Origin': '*',
-    // "Authorization": shopperToken
+    "Authorization": token
 }
 
 export default axios.create({

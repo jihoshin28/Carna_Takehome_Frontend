@@ -17,8 +17,11 @@ class AuthScreen extends React.Component {
         console.log(this.state)
     }
 
-    signIn = () => {
-        this.props.signIn(this.state.formData)
+    signIn = async() => {
+        await this.props.signIn(this.state.formData)
+        if(this.props.loggedIn){
+            this.props.history.push('/')
+        }
     }
     
     render(){
@@ -47,4 +50,10 @@ class AuthScreen extends React.Component {
     }
 }
 
-export default connect(null, {signIn})(AuthScreen)
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: state.teachers.loggedIn
+    }
+}
+
+export default connect(mapStateToProps, {signIn})(AuthScreen)

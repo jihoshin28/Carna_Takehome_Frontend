@@ -11,16 +11,59 @@ export const getAdminData = () => async dispatch => {
     })
 }
 
+export const changeAdminUsername = (id, form) => async dispatch => {
+    const result = await server.put(`/admin/${id}`, form)
+    let newUsername = result.data.updatedAdmin.username
+    console.log(newUsername)
+    if(newUsername){
+        alert(`Username updated to '${newUsername}'! Please use this at sign in.`)
+    }
+    dispatch({
+        type: "UPDATE_ADMIN_USERNAME",
+        payload: result.data.updatedAdmin.username
+    })
+}
+
+export const changeAdminPassword = (id, form) => async dispatch => {
+    const result = await server.put(`/admin/${id}`, form)
+    console.log(result.data.updatedAdmin.password)
+    dispatch({
+        type: "UPDATE_ADMIN_PASSWORD",
+        payload: result.data.updatedAdmin.password
+    })
+}
+
+export const changeAdminEmail = (id, form) => async dispatch => {
+    const result = await server.put(`/admin/${id}`, form)
+    console.log(result.data.updatedAdmin.email)
+    dispatch({
+        type: "UPDATE_ADMIN_USERNAME",
+        payload: result.data.updatedAdmin.email
+    })
+}
+
 // AUTH ACTIONS
 
 export const signIn = (authInfo) => async dispatch => {
     const result = await server.post('/login', authInfo)
     console.log(result.data)
+    if(result.data.token){
+        localStorage.setItem('token', result.data.token)
+        dispatch({
+            type: "SIGN_IN",
+            payload: result.data.admin
+        })
+    } else {
+        alert(result.data.message)
+    }
 }
 
-// export const logIn = () => {
-
-// }
+export const signOut = () => {
+    localStorage.removeItem('token')
+    return{
+        type: "SIGN_OUT"
+    }
+}
 
 // STUDENT ACTIONS
 

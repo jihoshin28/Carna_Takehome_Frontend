@@ -5,13 +5,27 @@ import { getStudentCourse } from '../actions'
 
 class StudentProgressScreen extends React.Component{
 
-    componentDidMount(){
-        let params = this.props.match.params
-        this.props.getStudentCourse(params.course_id, params.student_id)
+    constructor(){
+        super()
+        this.state = {
+            courseStudent: []
+        }
     }
 
+    async componentDidMount(){
+        let params = this.props.match.params
+        await this.props.getStudentCourse(params.course_id, params.student_id)
+    }
+
+    componentDidUpdate(){
+        if(this.props.courseStudent !== this.state.courseStudent){
+            this.setState({courseStudent: this.props.courseStudent})
+        }
+    }
+
+
     render(){
-        let student = this.props.courseStudent
+        let student = this.state.courseStudent
         return(
             <div> 
                 <h1 class = "screenHeader">Student Progress</h1>

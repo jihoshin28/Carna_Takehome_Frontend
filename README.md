@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project consists of a backend and a frontend folder.
+
+For the React Component:
+
+Please navigate to the Carna_Takehome_Frontend to run the React side of the application.
+
+In order to run the 
 
 ## Available Scripts
 

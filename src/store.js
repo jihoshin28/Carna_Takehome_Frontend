@@ -4,7 +4,10 @@ import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
-export const store = createStore(reducers, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
+export const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+))
 
 export const persistor = persistStore(store)
 

@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import {Route} from 'react-router-dom'
+import {Route, Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import AuthScreen from './screens/AuthScreen'
 import AdminScreen from './screens/AdminScreen'
-import ContactScreen from './screens/ContactScreen'
 import CoursesScreen from './screens/CoursesScreen'
 import CourseDetailsScreen from './screens/CourseDetailsScreen'
 import ForumScreen from './screens/ForumScreen'
 import ForumsScreen from './screens/ForumsScreen'
 import GroupsScreen from './screens/GroupsScreen'
-// import SignUpScreen from './screens/SignUpScreen'
 import SettingsScreen from './screens/SettingsScreen'
 import StudentsListScreen from './screens/StudentsListScreen'
 import StudentProgress from './screens/StudentProgress'
@@ -21,7 +19,11 @@ import ToolBar from './containers/Toolbar'
 
 
 class App extends React.Component {
+  Redirect = () => {
+    return <Redirect to ={{pathname: '/auth'}}/>
+  }
   render(){
+    var token =localStorage.getItem('token')
     return (
       <div className="App">
         <div className = "page-display">
@@ -29,18 +31,16 @@ class App extends React.Component {
           <ToolBar history = {this.props.history}/>
           <Route exact path={'/'} render={(props) => <AdminScreen {...props} />} />
           <Route exact path={'/auth'} render={(props) => <AuthScreen {...props} />} />
-          <Route exact path={'/contact/:user/:id'} render={(props) => <ContactScreen {...props} />} />
-          <Route exact path={'/courses'} render={(props) => <CoursesScreen {...props} />} />
-          <Route exact path={'/course_details/:id'} render={(props) => <CourseDetailsScreen {...props} />} />
-          <Route exact path={'/groups'} render={(props) => <GroupsScreen {...props} />} />
-          <Route exact path={'/forum/:id'} render={(props) => <ForumScreen {...props} />} />
-          <Route exact path={'/forums'} render={(props) => <ForumsScreen {...props} />} />
-          {/* <Route exact path={'/signup'} render={(props) => <SignUpScreen {...props} />} /> */}
-          <Route exact path={'/settings'} render={(props) => <SettingsScreen {...props} />} />
-          <Route exact path={'/student_list/:group_type/:id'} render={(props) => <StudentsListScreen {...props} />} />
-          <Route exact path={'/student_progress/:course_id/:student_id'} render={(props) => <StudentProgress {...props} />} />
-          <Route exact path={'/students'} render={(props) => <StudentsScreen {...props} />} />
-          <Route exact path={'/teachers'} render={(props) => <TeachersScreen {...props} />} />
+          <Route exact path={'/courses'} render = {(props) => token !== null ? <CoursesScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/course_details/:id'} render={(props) => token !== null ? <CourseDetailsScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/groups'} render={(props) => token !== null ? <GroupsScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/forum/:id'} render={(props) => token !== null ? <ForumScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/forums'} render={(props) => token !== null ? <ForumsScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/settings'} render={(props) => token !== null ? <SettingsScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/student_list/:group_type/:id'} render={(props) => token !== null ? <StudentsListScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/student_progress/:course_id/:student_id'} render={(props) => token !== null ? <StudentProgress {...props} /> : this.Redirect()} />
+          <Route exact path={'/students'} render={(props) => token !== null ? <StudentsScreen {...props} /> : this.Redirect()} />
+          <Route exact path={'/teachers'} render={(props) => token !== null ? <TeachersScreen {...props} />:  this.Redirect()} />
         </div>
       </div>
     );

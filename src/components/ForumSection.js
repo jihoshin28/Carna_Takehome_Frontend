@@ -1,6 +1,4 @@
 import React from 'react'
-import { deleteForum } from '../actions'
-import { connect } from 'react-redux'
 
 class ForumSection extends React.Component{
     
@@ -17,17 +15,17 @@ class ForumSection extends React.Component{
 
                 <div class="sectionInfo">
                     <p>
-                        Name: {this.capitalize(this.props.name)}
+                        Name: {this.props.name? this.capitalize(this.props.name): null}
                     </p>
                     <p>
-                        Type: {this.capitalize(this.props.type)}
+                        Type: {this.props.type? this.capitalize(this.props.type):null}
                     </p>
                 </div>
                 <div class="sectionButtonBox">
                     <button onClick = {() => this.props.history.push(`/forum/${this.props.forum_id}`)} class="btn btn-primary sectionButton">
                         {/* {this.props.paymentText} */}Forum
                     </button>
-                    <button onClick = {() => this.props.deleteForum(this.props.forum_id)} class="btn btn-danger sectionButton">
+                    <button onClick = {() => this.props.delete(this.props.forum_id)} class="btn btn-danger sectionButton">
                         {/* {this.props.orderButtonTxt} */}Delete Forum
                     </button>
 
@@ -38,4 +36,4 @@ class ForumSection extends React.Component{
     }
 }
 
-export default connect(null, { deleteForum })(ForumSection)
+export default ForumSection

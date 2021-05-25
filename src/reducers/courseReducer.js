@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     },
     allStudentCourses: [],
     currentCourseStudents: [],
-    selectedCourseStudent: null
+    selectedCourseStudent: []
 }
 
 export default (state = INITIAL_STATE, action) => {

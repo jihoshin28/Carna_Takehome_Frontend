@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {getGroups} from '../actions'
+import {getGroups, deleteGroup} from '../actions'
 import GroupSection from '../components/GroupSection'
 import Section from '../components/Section'
 import Filter from '../components/Filter'
@@ -18,12 +18,6 @@ class GroupsScreen extends React.Component {
     componentDidMount(){
         this.props.getGroups()
         console.log(this.props.groups)
-    }
-
-    componentDidUpdate(){
-        if(this.props.groups !== this.state.groups){
-            this.setState({groups: this.props.groups})
-        }
     }
 
     sort = (value) => {
@@ -64,6 +58,14 @@ class GroupsScreen extends React.Component {
         })
     }
 
+    delete = (group_id) => {
+        this.props.deleteGroup(group_id)
+        let newGroupState = this.state.groups.filter(group => group.id !== group_id)
+        this.setState({
+            groups: newGroupState
+        })
+    }
+
     render(){
         return(
             <div>
@@ -79,7 +81,7 @@ class GroupsScreen extends React.Component {
                 {this.state.groups.map(group => {
                     return (
                         <Section>
-                            <GroupSection group_id = {group.id} history = {this.props.history} name = {group.name} type = {group.type} imageURL = {group.image} /> 
+                            <GroupSection delete = {this.delete} group_id = {group.id} history = {this.props.history} name = {group.name} type = {group.type} imageURL = {group.image} /> 
                         </Section>
                     )
                 })}
@@ -94,4 +96,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getGroups})(GroupsScreen)
+export default connect(mapStateToProps, {getGroups, deleteGroup})(GroupsScreen)

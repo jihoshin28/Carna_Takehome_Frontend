@@ -4,6 +4,10 @@ import {deleteStudent} from '../actions'
 
 class StudentSection extends React.Component{
     
+    sendEmail = () => {  
+        window.open(`mailto:${this.props.email}`)
+    }
+
     render(){
         return(
             <div class="section">
@@ -23,7 +27,7 @@ class StudentSection extends React.Component{
                     </p>
                 </div>
                 <div class="sectionButtonBox">
-                    <button onClick = {() => this.props.history.push(`/contact/student/${this.props.student_id}`)} class="btn btn-primary sectionButton">
+                    <button onClick = {this.sendEmail} class="btn btn-primary sectionButton">
                         Contact Student
                     </button>
                     <button onClick = {() => this.props.deleteStudent(this.props.student_id)} class="btn btn-danger sectionButton">

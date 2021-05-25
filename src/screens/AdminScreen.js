@@ -20,19 +20,29 @@ class AdminScreen extends React.Component {
     render(){
         console.log(this.props.graphType)
         return(
-            <div>
-                <div className = "container">
-                    {this.renderSection()}
-                </div>
-            </div>
+            <React.Fragment>
+                    {this.props.loggedIn?
+                        <div className = "container">
+                            {this.renderSection()}
+                        </div>
+                        :
+                        <div className = "homeBackground">
+                            <div className = "homeHeader">
+                                <h1>Carna Admin Panel</h1>
+                            </div>
+                        </div>
+                    }
+            </React.Fragment>
             
         )
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
-        graphType: state.teachers.graphType
+        graphType: state.teachers.graphType,
+        loggedIn: state.teachers.loggedIn
     }
     
 }

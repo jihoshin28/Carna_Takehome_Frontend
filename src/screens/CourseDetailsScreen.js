@@ -2,14 +2,28 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PieGraph from '../graphs/PieGraph'
 import BarGraph from '../graphs/BarGraph'
-import { getCourse, courseStudentsInfo } from '../actions'
+import { getCourse, getStudents, courseStudentsInfo } from '../actions'
 
 class CourseDetailsScreen extends React.Component{
     
+    constructor(){
+        super()
+        this.state = {
+            courseStudents: []
+        }
+    }
+
     async componentDidMount(){
         let course_id = this.props.match.params.id
-        let result = await this.props.courseStudentsInfo(course_id)
+        await this.props.courseStudentsInfo(course_id)
+        await this.props.getStudents()
         console.log(this.props.courseStudents, course_id)
+    }
+
+    componentDidUpdate(){
+        if(this.props.courseStudents !== this.props.courseStudents){
+            this.setState({courseStudents: this.props.courseStudents})
+        }
     }
 
     completionPercentage = () => {
@@ -80,7 +94,7 @@ class CourseDetailsScreen extends React.Component{
     }
 
     render(){
-        console.log(this.studentsBarGraphData())
+        console.log(this.props.courseStudents)
         return(
             <div> 
                 <h1 class = "screenHeader">Course Details</h1>
@@ -110,4 +124,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getCourse, courseStudentsInfo })(CourseDetailsScreen)
+export default connect(mapStateToProps, {getCourse, getStudents, courseStudentsInfo })(CourseDetailsScreen)

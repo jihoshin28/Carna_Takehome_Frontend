@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {getCourses} from '../actions'
+import {getCourses, deleteCourse } from '../actions'
 import CourseSection from '../components/CourseSection'
 import Section from '../components/Section'
 import Filter from '../components/Filter'
@@ -18,12 +18,6 @@ class CoursesScreen extends React.Component {
     componentDidMount(){
         this.props.getCourses()
         console.log(this.props.courses, "COURSES")
-    }
-
-    componentDidUpdate(){
-        if(this.props.courses !== this.state.courses){
-            this.setState({courses: this.props.courses})
-        }
     }
 
     sort = (value) => {
@@ -79,6 +73,14 @@ class CoursesScreen extends React.Component {
         })
     }
 
+    delete = (course_id) => {
+        this.props.deleteCourse(course_id)
+        let newCourseState = this.state.courses.filter(course => course.id !== course_id)
+        this.setState({
+            courses: newCourseState
+        })
+    }
+
     render(){
         return(
             <div>
@@ -94,7 +96,7 @@ class CoursesScreen extends React.Component {
                 {this.state.courses.map(course => {
                     return(
                         <Section>
-                            <CourseSection course_id = {course.id} history = {this.props.history} subject = {course.subject} type = {course.subject} imageURL = {course.image} numberEnrolled = {course.students.length}/> 
+                            <CourseSection delete = {this.delete} course_id = {course.id} history = {this.props.history} subject = {course.subject} type = {course.subject} imageURL = {course.image} numberEnrolled = {course.students.length}/> 
                         </Section>
                     ) 
                 })}
@@ -109,4 +111,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getCourses})(CoursesScreen)
+export default connect(mapStateToProps, {getCourses, deleteCourse})(CoursesScreen)

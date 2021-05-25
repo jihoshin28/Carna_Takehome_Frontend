@@ -60,7 +60,6 @@ class TeachersScreen extends React.Component {
                     </div>
                 </div>
                 {this.state.teachers.map(teacher => {
-                    console.log(teacher)
                     return (
                         <Section>
                             <TeacherSection teacher_id = {teacher.id} history = {this.props.history} imageURL = {teacher.image} firstName = {teacher.first_name} lastName = {teacher.last_name} email = {teacher.email} city = {teacher.city} state = {teacher.state}/> 

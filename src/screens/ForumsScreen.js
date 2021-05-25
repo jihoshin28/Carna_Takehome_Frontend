@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {getForums} from '../actions'
+import {getForums, deleteForum } from '../actions'
 import ForumSection from '../components/ForumSection'
 import Section from '../components/Section'
 import Filter from '../components/Filter'
@@ -15,15 +15,12 @@ class ForumsScreen extends React.Component {
         }
     }
 
-    componentDidMount(){
-        this.props.getForums()
+    async componentDidMount(){
+        await this.props.getForums()
         console.log(this.props.forums)
-    }
-
-    componentDidUpdate(){
-        if(this.props.forums !== this.state.forums){
-            this.setState({forums: this.props.forums})
-        }
+        this.setState({
+            formus: this.props.forums
+        })
     }
 
     sort = (value) => {
@@ -64,6 +61,14 @@ class ForumsScreen extends React.Component {
         })
     }
 
+    delete = (forum_id) => {
+        this.props.deleteForum(forum_id)
+        let newForumState = this.state.forums.filter(forum => forum.id !== forum_id)
+        this.setState({
+            forums: newForumState
+        })
+    }
+
     render(){
         return(
             <div>
@@ -80,7 +85,7 @@ class ForumsScreen extends React.Component {
                     console.log(forum)
                     return (
                         <Section>
-                            <ForumSection forum_id = {forum.id} history = {this.props.history} name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
+                            <ForumSection delete = {this.delete} forum_id = {forum.id} history = {this.props.history} name = {forum.name} type = {forum.type} imageURL = {forum.image}/> 
                         </Section>
                     )
                 })}
@@ -95,4 +100,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getForums})(ForumsScreen)
+export default connect(mapStateToProps, {getForums, deleteForum })(ForumsScreen)
